@@ -5,8 +5,18 @@ body {
   /* background-color: #000000; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  /* Chrome, Safari, Opera */
+  display: none;
+}
+
 h1,
 h2 {
+  font-family: "Raleway", sans-serif;
   font-size: 45px;
 }
 
@@ -14,10 +24,10 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  color:#000;
 }
 
-/*========== header ========= */
-
+/*============= Header ===============*/
 #navbar {
   width: 100%;
   background-color: #be3144;
@@ -66,28 +76,28 @@ h2 {
 .nav-content ul li a {
   text-decoration: none;
   color: #ffffff;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav-content ul li a:hover {
   color: #000;
 }
 
-/*====== welcoming ====== */
-
-#welcomer-section {
+/*============= Welcoming ===============*/
+#welcome-section {
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
 
 #welcome-section:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
-/*====== projects ====== */
-
+/*============= projects ===============*/
 #projects {
   background-color: #fff;
   padding: 20px 0;
@@ -96,7 +106,7 @@ h2 {
   display: flex;
 }
 
-#projects .project-title {
+#projects .project-tile {
   padding-bottom: 30px;
   padding-top: 73px;
 }
@@ -111,10 +121,20 @@ h2 {
   display: block;
   width: 100%;
   position: relative;
+  transition: all 1s ease-in-out;
 }
 
 #projects .card:hover {
-  transform: scale(1.1);
+  transform: rotate3d(0, 1, 0.5, 1turn);
+  position: relative;
+  z-index: 10;
+}
+
+#projects .cards .card img {
+  width: 100%;
+  max-height: 300px;
+  height: 100%;
+  border-radius: 4px;
 }
 
 #projects .cards .card figcaption {
@@ -130,18 +150,18 @@ h2 {
   background-color: rgb(0, 0, 0, 0.8);
 }
 
-/*======== contact ========= */
-
+/*============= Contact ===============*/
 #contact {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   display: flex;
   min-height: 80vh;
   align-items: center;
   text-align: center;
+  transition: all 0.5s ease-in-out;
 }
 
 #contact:hover {
-  transform: scale(1.1);
+  transform: scale(1.4);
 }
 
 #contact h2 {
@@ -150,7 +170,7 @@ h2 {
 
 #contact ul {
   padding: 0;
-  font-size: 30px;
+  font-size: 20px;
   list-style: none;
   width: 100%;
 }
@@ -159,6 +179,7 @@ h2 {
   display: inline-block;
   margin-right: 40px;
   margin-bottom: 15px;
+  transition: all 0.5s ease-in-out;
 }
 
 #contact ul li:last-child {
@@ -166,17 +187,16 @@ h2 {
 }
 
 #contact ul li:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(-10deg);
 }
 
 #contact ul li a {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
-/*============ footer ============ */
-
-#footer {
+/*============= Footer ===============*/
+footer {
   width: 100%;
   background-color: #fff;
   border-top: 2px solid #be3144;
@@ -192,26 +212,24 @@ footer .footer-content {
 footer .footer-content .logo {
   min-width: 80px;
   margin-right: 20px;
-  width: 15%;
 }
 
 footer .footer-content .logo img {
   width: 100%;
 }
 
-/*============ media query ===============*/
-
-@media(min-width: 400px){
-  .nav-content .logo{
+/*============= Media query ===============*/
+@media (min-width: 400px) {
+  .nav-content .logo {
     width: 10%;
   }
 }
-@media (min-width: 600px){
+@media (min-width: 600px) {
   .nav-content ul {
     font-size: 24px;
   }
-  .nav-content ul li a{
-      padding: 46px;
+  .nav-content ul li a {
+    padding: 46px;
   }
   .nav-content ul li a:hover {
     background-color: #000;
@@ -222,8 +240,13 @@ footer .footer-content .logo img {
   }
 }
 
-@media (min-width: 900px){
+@media (min-width: 900px) {
   #projects .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  
+footer .footer-content .logo img {
+    width: 20%;
   }
 }
